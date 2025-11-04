@@ -9,23 +9,37 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
-import toast, { Toaster } from "react-hot-toast"; // ✅ Toast
+import toast, { Toaster } from "react-hot-toast";
+import Select from "react-select";
+import phoneCountryCodes from "../utils/phoneCountryCodes"; // ✅ Import country codes
 
 export default function Contact() {
     const form = useRef();
     const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [selectedCode, setSelectedCode] = useState({ label: "🇺🇬 +256", value: "+256" });
+    const [phone, setPhone] = useState("");
+
+    // ✅ Simplified labels for cleaner UI
+    const options = phoneCountryCodes.map((country) => ({
+        label: `${country.flag} ${country.code}`,
+        value: country.code,
+    }));
 
     const sendEmail = (e) => {
         e.preventDefault();
         setLoading(true);
 
+        const fullPhone = `${selectedCode.value}${phone}`;
+        const formData = new FormData(form.current);
+        formData.set("phone", fullPhone);
+
         emailjs
             .sendForm(
-                "service_cl2zplh", // 🔹 Your EmailJS service ID
-                "template_szixux5", // 🔹 Your EmailJS template ID
+                "service_cl2zplh",
+                "template_szixux5",
                 form.current,
-                "D46zM-i5AMylcU5C1" // 🔹 Your EmailJS public key
+                "D46zM-i5AMylcU5C1"
             )
             .then(
                 () => {
@@ -68,7 +82,6 @@ export default function Contact() {
             id="contact"
             className="bg-[#0D0D0D] text-white min-h-screen flex flex-col md:flex-row justify-between items-start px-6 md:px-16 lg:px-24 py-20"
         >
-            {/* ✅ Toast now at top-right */}
             <Toaster position="top-right" reverseOrder={false} />
 
             {/* ===== Left Section ===== */}
@@ -94,10 +107,10 @@ export default function Contact() {
 
                 <ul className="space-y-3 text-gray-300">
                     {[
-                        "5+ Years of Experience",
-                        "Professional Web Designer",
+                        "2+ Years of Experience",
+                        "Product Management",
                         "Mobile Apps Development",
-                        "Technical Mentorship",
+                        "Data Science",
                         "Fullstack Developer",
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-3">
@@ -181,16 +194,68 @@ export default function Contact() {
                     </div>
                 </div>
 
+                {/* ✅ Improved Phone + Country Code Selector */}
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>
                         <label className="block mb-2 text-sm text-gray-400">Phone Number</label>
-                        <input
-                            type="tel"
-                            name="phone"
-                            className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white rounded-md px-4 py-3 focus:outline-none focus:border-pink-500"
-                            placeholder="+256 712 345 678"
-                        />
+                        <div className="flex gap-2 items-center">
+                            <div className="w-1/3">
+                                <Select
+                                    options={options}
+                                    value={selectedCode}
+                                    onChange={setSelectedCode}
+                                    isSearchable
+                                    className="text-black"
+                                    styles={{
+                                        control: (base) => ({
+                                            ...base,
+                                            backgroundColor: "#1A1A1A",
+                                            border: "1px solid #2A2A2A",
+                                            borderRadius: "0.375rem",
+                                            minHeight: "48px",
+                                            color: "white",
+                                            boxShadow: "none",
+                                            "&:hover": {
+                                                border: "1px solid #ec4899",
+                                            },
+                                        }),
+                                        singleValue: (base) => ({
+                                            ...base,
+                                            color: "white",
+                                            fontSize: "1rem",
+                                        }),
+                                        menu: (base) => ({
+                                            ...base,
+                                            backgroundColor: "#111",
+                                            color: "white",
+                                            zIndex: 50,
+                                        }),
+                                        option: (base, state) => ({
+                                            ...base,
+                                            backgroundColor: state.isFocused
+                                                ? "#ec4899"
+                                                : "#111",
+                                            color: "white",
+                                            cursor: "pointer",
+                                        }),
+                                        dropdownIndicator: (base) => ({
+                                            ...base,
+                                            color: "white",
+                                        }),
+                                    }}
+                                />
+                            </div>
+                            <input
+                                type="tel"
+                                name="phone"
+                                className="flex-1 bg-[#1A1A1A] border border-[#2A2A2A] text-white rounded-md px-4 py-[13px] focus:outline-none focus:border-pink-500"
+                                placeholder="712 345 678"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
+                        </div>
                     </div>
+
                     <div>
                         <label className="block mb-2 text-sm text-gray-400">Subject</label>
                         <input
