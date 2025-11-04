@@ -43,23 +43,31 @@ export default function Skills() {
             { name: "Java", icon: <FaJava /> },
             { name: "JavaScript", icon: <SiJavascript /> },
             { name: "HTML", icon: <SiHtml5 /> },
-            { name: "CSS", icon: <SiCss3 /> },
-            { name: "Bash", icon: <FaTerminal /> },
-        ],
-        frameworks: [
             { name: "React.js", icon: <SiReact /> },
-            { name: "Next.js", icon: <SiNextdotjs /> },
-            { name: "Express.js", icon: <SiExpress /> },
+
+            { name: "CSS", icon: <SiCss3 /> },
             { name: "Django", icon: <SiDjango /> },
             { name: "Laravel", icon: <SiLaravel /> },
             { name: "Vite", icon: <SiVite /> },
             { name: "Docker", icon: <SiDocker /> },
-            { name: "Linux", icon: <SiLinux /> },
-
-            { name: "CI/CD Pipelines", icon: <FaNetworkWired /> },
-
-            { name: "Testing (Mocha/Chai)", icon: <FaTools /> },
+            { name: "Jupyter Notebook", icon: <SiJupyter /> },
+            { name: "NumPy", icon: <SiNumpy /> },
+            { name: "Pandas", icon: <SiPandas /> },
         ],
+        // frameworks: [
+        //     { name: "React.js", icon: <SiReact /> },
+        //     { name: "Next.js", icon: <SiNextdotjs /> },
+        //     { name: "Express.js", icon: <SiExpress /> },
+        //     { name: "Django", icon: <SiDjango /> },
+        //     { name: "Laravel", icon: <SiLaravel /> },
+        //     { name: "Vite", icon: <SiVite /> },
+        //     { name: "Docker", icon: <SiDocker /> },
+        //     { name: "Linux", icon: <SiLinux /> },
+
+        //     { name: "CI/CD Pipelines", icon: <FaNetworkWired /> },
+
+        //     { name: "Testing (Mocha/Chai)", icon: <FaTools /> },
+        // ],
         // systems: [
         //     { name: "Linux", icon: <SiLinux /> },
         //     { name: "Git", icon: <SiGit /> },
@@ -74,18 +82,18 @@ export default function Skills() {
             { name: "PostgreSQL", icon: <SiPostgresql /> },
             { name: "MongoDB", icon: <SiMongodb /> },
         ],
-        ai: [
-            { name: "Machine Learning", icon: <SiScikitlearn /> },
-            { name: "Predictive Analytics", icon: <SiNumpy /> },
-            { name: "Jupyter Notebook", icon: <SiJupyter /> },
-            { name: "NumPy", icon: <SiNumpy /> },
-            { name: "Pandas", icon: <SiPandas /> },
-            // { name: "Scikit-learn", icon: <SiScikitlearn /> },
-            // { name: "TensorFlow", icon: <SiTensorflow /> },
-            // { name: "Keras", icon: <SiKeras /> },
-            // { name: "IoT Fundamentals", icon: <FaNetworkWired /> },
-            // { name: "Smart Mobility", icon: <FaNetworkWired /> },
-        ],
+        // ai: [
+        //     { name: "Machine Learning", icon: <SiScikitlearn /> },
+        //     { name: "Predictive Analytics", icon: <SiNumpy /> },
+        //     { name: "Jupyter Notebook", icon: <SiJupyter /> },
+        //     { name: "NumPy", icon: <SiNumpy /> },
+        //     { name: "Pandas", icon: <SiPandas /> },
+        //     // { name: "Scikit-learn", icon: <SiScikitlearn /> },
+        //     // { name: "TensorFlow", icon: <SiTensorflow /> },
+        //     // { name: "Keras", icon: <SiKeras /> },
+        //     // { name: "IoT Fundamentals", icon: <FaNetworkWired /> },
+        //     // { name: "Smart Mobility", icon: <FaNetworkWired /> },
+        // ],
     };
 
     return (
