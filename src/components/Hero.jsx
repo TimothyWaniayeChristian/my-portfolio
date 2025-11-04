@@ -23,21 +23,20 @@ export default function Hero() {
                 </h2>
 
                 <p className="text-gray-400 leading-relaxed">
-                    Dynamic and results-oriented Software Engineer with over 2 years of
-                    experience specializing in architecting scalable solutions and leading
-                    transformative projects. Proven track record of diagnosing complex
-                    challenges, delivering innovative solutions, and fostering collaborative
-                    team environments.
+                    Motivated Software Engineer with a strong foundation in information systems, AI, and data-driven solutions. Experienced in software development, systems architecture, CI/CD pipelines, and IT infrastructure support. Skilled at building scalable, secure, and user-friendly applications while fostering cross-team collaboration. Passionate about Industry 4.0, digital mobility platforms, and AI/ML in connected systems.
                 </p>
+
 
                 {/* Buttons */}
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
                     <a
-                        href="/resume"
+                        href="/resume.pdf"
+                        download="Timothy_Christian_Waniaye_Resume.pdf"
                         className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-lg font-medium transition duration-300"
                     >
                         Download Resume
                     </a>
+
 
                     <a
                         href="/contact"
