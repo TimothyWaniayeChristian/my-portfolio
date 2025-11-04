@@ -31,9 +31,9 @@ export default function Navbar() {
                             className={({ isActive }) =>
                                 `
                   relative transition duration-300
-                  ${isActive ? "text-pink-500" : "text-gray-300"}
+                  ${isActive ? "text-pink-500 before:w-full" : "text-gray-300 before:w-0"}
                   hover:text-white
-                  before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-[2px]
+                  before:absolute before:bottom-[-4px] before:left-0 before:h-[2px]
                   before:bg-pink-500 before:transition-all before:duration-300
                   hover:before:w-full
                 `
@@ -74,9 +74,12 @@ export default function Navbar() {
                             onClick={() => setOpen(false)}
                             className={({ isActive }) =>
                                 `
-                  transition duration-300
-                  ${isActive ? "text-pink-500" : "text-gray-300"}
+                  relative transition duration-300
+                  ${isActive ? "text-pink-500 before:w-full" : "text-gray-300 before:w-0"}
                   hover:text-white
+                  before:absolute before:bottom-[-4px] before:left-0 before:h-[2px]
+                  before:bg-pink-500 before:transition-all before:duration-300
+                  hover:before:w-full
                 `
                             }
                         >
