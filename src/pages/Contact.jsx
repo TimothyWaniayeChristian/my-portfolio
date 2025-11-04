@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast"; // ✅ Toast
 
 export default function Contact() {
     const form = useRef();
@@ -21,22 +22,43 @@ export default function Contact() {
 
         emailjs
             .sendForm(
-                "service_xxxxxx", // 🔹 Replace with your EmailJS service ID
-                "template_xxxxxx", // 🔹 Replace with your EmailJS template ID
+                "service_cl2zplh", // 🔹 Your EmailJS service ID
+                "template_szixux5", // 🔹 Your EmailJS template ID
                 form.current,
-                "YOUR_PUBLIC_KEY" // 🔹 Replace with your EmailJS public key
+                "D46zM-i5AMylcU5C1" // 🔹 Your EmailJS public key
             )
             .then(
                 () => {
                     setSent(true);
                     setLoading(false);
                     form.current.reset();
+
+                    toast.success("Message sent successfully!", {
+                        style: {
+                            background: "#1A1A1A",
+                            color: "#fff",
+                            border: "1px solid #2A2A2A",
+                            padding: "12px 16px",
+                        },
+                        iconTheme: {
+                            primary: "#ec4899",
+                            secondary: "#fff",
+                        },
+                    });
+
                     setTimeout(() => setSent(false), 4000);
                 },
                 (error) => {
                     console.error(error.text);
                     setLoading(false);
-                    alert("Message failed to send. Please try again.");
+                    toast.error("Message failed to send. Please try again.", {
+                        style: {
+                            background: "#1A1A1A",
+                            color: "#fff",
+                            border: "1px solid #2A2A2A",
+                            padding: "12px 16px",
+                        },
+                    });
                 }
             );
     };
@@ -46,6 +68,9 @@ export default function Contact() {
             id="contact"
             className="bg-[#0D0D0D] text-white min-h-screen flex flex-col md:flex-row justify-between items-start px-6 md:px-16 lg:px-24 py-20"
         >
+            {/* ✅ Toast now at top-right */}
+            <Toaster position="top-right" reverseOrder={false} />
+
             {/* ===== Left Section ===== */}
             <motion.div
                 initial={{ opacity: 0, x: -60 }}
@@ -81,9 +106,8 @@ export default function Contact() {
                     ))}
                 </ul>
 
-                {/* ===== Social Icons (same as Hero) ===== */}
+                {/* ===== Social Icons ===== */}
                 <div className="flex gap-4 pt-6">
-                    {/* GitHub */}
                     <a
                         href="https://github.com/TimothyWaniayeChristian"
                         target="_blank"
@@ -92,8 +116,6 @@ export default function Contact() {
                     >
                         <FiGithub className="text-xl" />
                     </a>
-
-                    {/* LinkedIn */}
                     <a
                         href="https://www.linkedin.com/in/timothy-christian-waniaye-291788265/"
                         target="_blank"
@@ -102,16 +124,12 @@ export default function Contact() {
                     >
                         <FiLinkedin className="text-xl" />
                     </a>
-
-                    {/* Email */}
                     <a
                         href="mailto:tcwaniaye@gmail.com"
                         className="bg-[#1A1A1A] p-3 rounded-md hover:bg-pink-600 transition duration-300"
                     >
                         <FiMail className="text-xl" />
                     </a>
-
-                    {/* WhatsApp */}
                     <a
                         href="https://wa.me/256778315407"
                         target="_blank"
@@ -120,8 +138,6 @@ export default function Contact() {
                     >
                         <FaWhatsapp className="text-xl" />
                     </a>
-
-                    {/* X */}
                     <a
                         href="https://x.com/cristianwaniaye"
                         target="_blank"
@@ -147,7 +163,7 @@ export default function Contact() {
                         <label className="block mb-2 text-sm text-gray-400">Full Name *</label>
                         <input
                             type="text"
-                            name="user_name"
+                            name="name"
                             required
                             className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white rounded-md px-4 py-3 focus:outline-none focus:border-pink-500"
                             placeholder="Your Name"
@@ -157,7 +173,7 @@ export default function Contact() {
                         <label className="block mb-2 text-sm text-gray-400">Email Address *</label>
                         <input
                             type="email"
-                            name="user_email"
+                            name="email"
                             required
                             className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white rounded-md px-4 py-3 focus:outline-none focus:border-pink-500"
                             placeholder="you@example.com"
@@ -170,7 +186,7 @@ export default function Contact() {
                         <label className="block mb-2 text-sm text-gray-400">Phone Number</label>
                         <input
                             type="tel"
-                            name="user_phone"
+                            name="phone"
                             className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white rounded-md px-4 py-3 focus:outline-none focus:border-pink-500"
                             placeholder="+256 712 345 678"
                         />
@@ -201,7 +217,7 @@ export default function Contact() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     disabled={loading || sent}
-                    className="flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-md font-semibold transition duration-300 w-full md:w-auto"
+                    className="flex items-center justify-center gap-2 bg-[#db2777] hover:bg-[#be185d] px-6 py-3 rounded-md font-semibold transition duration-300 w-full md:w-auto shadow-md shadow-pink-900/30"
                 >
                     {loading ? "Sending..." : sent ? "Sent!" : "Send Message"}
                 </motion.button>
