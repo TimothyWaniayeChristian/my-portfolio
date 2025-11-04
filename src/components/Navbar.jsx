@@ -15,11 +15,11 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800 overflow-x-hidden">
+            <div className="flex items-center justify-between px-6 md:px-16 lg:px-24 py-4 text-white">
                 {/* Logo */}
-                <NavLink to="/" className="text-2xl font-semibold">
-                    <span className="text-pink-500 font-script">Wilson</span> Kinyua
+                <NavLink to="/" className="text-2xl font-semibold tracking-tight">
+                    <span className="text-pink-500 font-script">Timothy</span> Christian <span className="text-pink-500 font-script">Waniaye</span>
                 </NavLink>
 
                 {/* Desktop Nav */}
@@ -29,8 +29,14 @@ export default function Navbar() {
                             key={item.name}
                             to={item.path}
                             className={({ isActive }) =>
-                                `transition hover:text-pink-500 ${isActive ? "text-pink-500" : ""
-                                }`
+                                `
+                  relative transition duration-300
+                  ${isActive ? "text-pink-500" : "text-gray-300"}
+                  hover:text-white
+                  before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-[2px]
+                  before:bg-pink-500 before:transition-all before:duration-300
+                  hover:before:w-full
+                `
                             }
                         >
                             {item.name}
@@ -41,44 +47,52 @@ export default function Navbar() {
                 {/* Hire Me */}
                 <NavLink
                     to="/contact"
-                    className="hidden md:block bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition"
+                    className="hidden md:block bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition duration-300"
                 >
                     Hire Me
                 </NavLink>
 
-                {/* Mobile menu toggle */}
-                <button onClick={() => setOpen(!open)} className="md:hidden text-pink-500">
+                {/* Mobile Menu Toggle */}
+                <button
+                    onClick={() => setOpen(!open)}
+                    className="md:hidden text-pink-500 focus:outline-none transition duration-300 hover:text-white"
+                >
                     {open ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
-            {/* Mobile menu */}
-            {open && (
-                <div className="md:hidden bg-black border-t border-gray-800 py-4">
-                    <div className="flex flex-col items-center space-y-4 text-sm">
-                        {navItems.map((item) => (
-                            <NavLink
-                                key={item.name}
-                                to={item.path}
-                                className={({ isActive }) =>
-                                    `transition hover:text-pink-500 ${isActive ? "text-pink-500" : ""
-                                    }`
-                                }
-                                onClick={() => setOpen(false)}
-                            >
-                                {item.name}
-                            </NavLink>
-                        ))}
+            {/* ===== Mobile Menu (Animated) ===== */}
+            <div
+                className={`md:hidden bg-black border-t border-gray-800 overflow-hidden transition-all duration-500 ease-in-out ${open ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+                    }`}
+            >
+                <div className="flex flex-col items-center space-y-4 text-sm transition duration-300">
+                    {navItems.map((item) => (
                         <NavLink
-                            to="/contact"
-                            className="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition"
+                            key={item.name}
+                            to={item.path}
                             onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                                `
+                  transition duration-300
+                  ${isActive ? "text-pink-500" : "text-gray-300"}
+                  hover:text-white
+                `
+                            }
                         >
-                            Hire Me
+                            {item.name}
                         </NavLink>
-                    </div>
+                    ))}
+
+                    <NavLink
+                        to="/contact"
+                        onClick={() => setOpen(false)}
+                        className="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition duration-300"
+                    >
+                        Hire Me
+                    </NavLink>
                 </div>
-            )}
+            </div>
         </nav>
     );
 }
