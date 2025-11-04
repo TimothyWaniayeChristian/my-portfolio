@@ -1,72 +1,82 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
+    const navItems = [
+        { name: "About", path: "/about" },
+        { name: "Services", path: "/services" },
+        { name: "Resume", path: "/resume" },
+        { name: "Skills", path: "/skills" },
+        { name: "Projects", path: "/projects" },
+        { name: "Contact", path: "/contact" },
+    ];
+
     return (
-        <nav className="fixed w-full top-0 left-0 z-50 bg-black/90 text-white">
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+            <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
                 {/* Logo */}
-                <h1 className="text-2xl font-semibold">
+                <NavLink to="/" className="text-2xl font-semibold">
                     <span className="text-pink-500 font-script">Wilson</span> Kinyua
-                </h1>
+                </NavLink>
 
-                {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 text-sm font-medium">
-                    {["About", "Services", "Resume", "Skills", "Projects", "Contact"].map(
-                        (item) => (
-                            <li key={item}>
-                                <a href={`#${item.toLowerCase()}`} className="hover:text-pink-500">
-                                    {item}
-                                </a>
-                            </li>
-                        )
-                    )}
-                </ul>
+                {/* Desktop Nav */}
+                <div className="hidden md:flex space-x-8 text-sm font-medium">
+                    {navItems.map((item) => (
+                        <NavLink
+                            key={item.name}
+                            to={item.path}
+                            className={({ isActive }) =>
+                                `transition hover:text-pink-500 ${isActive ? "text-pink-500" : ""
+                                }`
+                            }
+                        >
+                            {item.name}
+                        </NavLink>
+                    ))}
+                </div>
 
-                {/* Hire Me Button */}
-                <a
-                    href="#contact"
-                    className="hidden md:block bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium"
+                {/* Hire Me */}
+                <NavLink
+                    to="/contact"
+                    className="hidden md:block bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition"
                 >
                     Hire Me
-                </a>
+                </NavLink>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-pink-500"
-                    onClick={() => setOpen(!open)}
-                >
+                {/* Mobile menu toggle */}
+                <button onClick={() => setOpen(!open)} className="md:hidden text-pink-500">
                     {open ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile menu */}
             {open && (
-                <div className="md:hidden bg-black border-t border-gray-800">
-                    <ul className="flex flex-col items-center py-4 space-y-4 text-sm font-medium">
-                        {["About", "Services", "Resume", "Skills", "Projects", "Contact"].map(
-                            (item) => (
-                                <li key={item}>
-                                    <a
-                                        href={`#${item.toLowerCase()}`}
-                                        className="hover:text-pink-500"
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        {item}
-                                    </a>
-                                </li>
-                            )
-                        )}
-                        <a
-                            href="#contact"
-                            className="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium"
+                <div className="md:hidden bg-black border-t border-gray-800 py-4">
+                    <div className="flex flex-col items-center space-y-4 text-sm">
+                        {navItems.map((item) => (
+                            <NavLink
+                                key={item.name}
+                                to={item.path}
+                                className={({ isActive }) =>
+                                    `transition hover:text-pink-500 ${isActive ? "text-pink-500" : ""
+                                    }`
+                                }
+                                onClick={() => setOpen(false)}
+                            >
+                                {item.name}
+                            </NavLink>
+                        ))}
+                        <NavLink
+                            to="/contact"
+                            className="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg font-medium transition"
                             onClick={() => setOpen(false)}
                         >
                             Hire Me
-                        </a>
-                    </ul>
+                        </NavLink>
+                    </div>
                 </div>
             )}
         </nav>
