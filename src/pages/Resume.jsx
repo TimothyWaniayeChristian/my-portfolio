@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Resume() {
@@ -117,7 +118,7 @@ export default function Resume() {
                             </h3>
                             <div className="flex justify-between items-center mb-4">
                                 <p className="font-semibold text-gray-200">Team Lead / Software Engineer</p>
-                                <span className="text-pink-500 text-sm">Mar 2025 – Present</span>
+                                <span className="text-pink-500 text-sm">Mar 2025 – Oct 2025</span>
                             </div>
                             <p className="text-sm text-gray-300 mb-2">
                                 <strong>Project:</strong> ONIMS (One Network Information System) — for Hold The Child NGO, South Sudan
