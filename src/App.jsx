@@ -8,7 +8,7 @@ import Services from "./pages/Services";
 import Resume from "./pages/Resume";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
-// import Contact from "./pages/Contact";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
 
         <Footer />
