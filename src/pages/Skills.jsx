@@ -49,7 +49,7 @@ export default function Skills() {
             { name: "Django", icon: <SiDjango /> },
             { name: "Laravel", icon: <SiLaravel /> },
             { name: "Vite", icon: <SiVite /> },
-            { name: "Docker", icon: <SiDocker /> },
+            // { name: "Docker", icon: <SiDocker /> },
             { name: "Jupyter Notebook", icon: <SiJupyter /> },
             { name: "NumPy", icon: <SiNumpy /> },
             { name: "Pandas", icon: <SiPandas /> },
