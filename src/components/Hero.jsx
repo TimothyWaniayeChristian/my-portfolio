@@ -19,7 +19,7 @@ export default function Hero() {
 
 
                 <h2 className="text-2xl sm:text-3xl font-bold text-pink-500">
-                    Junior Software Engineer<span className="animate-pulse">|</span>
+                    Software Engineer<span className="animate-pulse">|</span>
                 </h2>
 
                 <p className="text-gray-400 leading-relaxed">
