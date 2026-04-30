@@ -26,6 +26,9 @@ import {
     SiScikitlearn,
     SiTensorflow,
     SiKeras,
+
+
+    
 } from "react-icons/si";
 import { FaNetworkWired, FaJava, FaTerminal, FaTools } from "react-icons/fa";
 
@@ -49,7 +52,7 @@ export default function Skills() {
             { name: "Django", icon: <SiDjango /> },
             { name: "Laravel", icon: <SiLaravel /> },
             { name: "Vite", icon: <SiVite /> },
-            // { name: "Docker", icon: <SiDocker /> },
+            //{ name: "C#", icon: <SiCsharp /> },
             { name: "Jupyter Notebook", icon: <SiJupyter /> },
             { name: "NumPy", icon: <SiNumpy /> },
             { name: "Pandas", icon: <SiPandas /> },

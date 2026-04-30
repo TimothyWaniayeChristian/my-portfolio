@@ -61,6 +61,62 @@ export default function Resume() {
                         transition={{ duration: 0.5 }}
                         className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto"
                     >
+                        {/* NEW JOB: Data Care (U) Ltd */}
+                        <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
+                            <h3 className="text-pink-500 font-semibold text-lg mb-1">
+                                Data Care (U) Ltd
+                            </h3>
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="font-semibold text-gray-200">Graduate Software Developer Intern</p>
+                                <span className="text-pink-500 text-sm">Dec 2025 –</span>
+                            </div>
+                            <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
+                                <li>
+                                    Contributed to software development lifecycle activities, including requirements analysis, system design, development, and testing.
+                                </li>
+                                <li>
+                                    Developed and maintained web applications, enhancing functionality and user experience.
+                                </li>
+                                <li>
+                                    Applied security best practices to support data protection and system integrity.
+                                </li>
+                                <li>
+                                    Participated in debugging, testing, and code reviews to ensure quality and reliability of software solutions.
+                                </li>
+                                <li>
+                                    Documented system workflows, technical specifications, and user guides to support project continuity.
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Refactory Apprenticeship */}
+                        <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
+                            <h3 className="text-pink-500 font-semibold text-lg mb-1">
+                                Refactory Uganda — Software Engineering Apprenticeship
+                            </h3>
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="font-semibold text-gray-200">Team Lead / Software Engineer</p>
+                                <span className="text-pink-500 text-sm">Mar 2025 – Oct 2025</span>
+                            </div>
+                            <p className="text-sm text-gray-300 mb-2">
+                                <strong>Project:</strong> ONIMS (One Network Information System) — for Hold The Child NGO, South Sudan
+                            </p>
+                            <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
+                                <li>
+                                    Led a cross-functional team in designing and developing ONIMS to streamline HR, project tracking, and document management.
+                                </li>
+                                <li>
+                                    Designed database schemas, CRUD endpoints, and implemented authentication with role-based access control.
+                                </li>
+                                <li>
+                                    Collaborated in an Agile setup to build RESTful APIs and backend logic using Node.js and Express.
+                                </li>
+                                <li>
+                                    Contributed to UI/UX design to ensure intuitive and accessible user experiences.
+                                </li>
+                            </ul>
+                        </div>
+
                         {/* Pelere Group */}
                         <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
                             <h3 className="text-pink-500 font-semibold text-lg mb-1">
@@ -107,34 +163,6 @@ export default function Resume() {
                                 </li>
                                 <li>
                                     Participated in debugging and code reviews, ensuring high deployment quality.
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Refactory Apprenticeship */}
-                        <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg md:col-span-2">
-                            <h3 className="text-pink-500 font-semibold text-lg mb-1">
-                                Refactory Uganda — Software Engineering Apprenticeship
-                            </h3>
-                            <div className="flex justify-between items-center mb-4">
-                                <p className="font-semibold text-gray-200">Team Lead / Software Engineer</p>
-                                <span className="text-pink-500 text-sm">Mar 2025 – Oct 2025</span>
-                            </div>
-                            <p className="text-sm text-gray-300 mb-2">
-                                <strong>Project:</strong> ONIMS (One Network Information System) — for Hold The Child NGO, South Sudan
-                            </p>
-                            <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
-                                <li>
-                                    Led a cross-functional team in designing and developing ONIMS to streamline HR, project tracking, and document management.
-                                </li>
-                                <li>
-                                    Designed database schemas, CRUD endpoints, and implemented authentication with role-based access control.
-                                </li>
-                                <li>
-                                    Collaborated in an Agile setup to build RESTful APIs and backend logic using Node.js and Express.
-                                </li>
-                                <li>
-                                    Contributed to UI/UX design to ensure intuitive and accessible user experiences.
                                 </li>
                             </ul>
                         </div>
