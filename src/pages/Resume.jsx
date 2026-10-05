@@ -61,14 +61,58 @@ export default function Resume() {
                         transition={{ duration: 0.5 }}
                         className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto"
                     >
-                        {/* NEW JOB: Data Care (U) Ltd */}
+                        {/* Graduate Innovation Thinktank */}
+                        <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
+                            <h3 className="text-pink-500 font-semibold text-lg mb-1">
+                                Graduate Innovation Thinktank (Remote)
+                            </h3>
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="font-semibold text-gray-200">Full-Stack Software Developer</p>
+                                <span className="text-pink-500 text-sm">Jul 2026 – Present</span>
+                            </div>
+                            <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
+                                <li>
+                                    Build end-to-end features across a React frontend and an Elixir backend in a fully remote team.
+                                </li>
+                                <li>
+                                    Design responsive, maintainable user interfaces and the backend services that power them.
+                                </li>
+                                <li>
+                                    Collaborate asynchronously with distributed teammates on planning, code reviews, and delivery.
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Emerging Learners Platform - Refactory Academy */}
+                        <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
+                            <h3 className="text-pink-500 font-semibold text-lg mb-1">
+                                Emerging Learners Platform — Refactory Academy
+                            </h3>
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="font-semibold text-gray-200">Frontend Engineer (Consultant)</p>
+                                <span className="text-pink-500 text-sm">Jul 2026 – Present</span>
+                            </div>
+                            <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
+                                <li>
+                                    Develop and maintain the platform's frontend in React as a remote consultant for Refactory Academy.
+                                </li>
+                                <li>
+                                    Deliver accessible, user-friendly learning interfaces that support learners across the platform.
+                                </li>
+                                <li>
+                                    Work with the wider product team to turn requirements into working, tested UI components.
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Data Care (U) Ltd */}
                         <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#2a2a2a] shadow-lg">
                             <h3 className="text-pink-500 font-semibold text-lg mb-1">
                                 Data Care (U) Ltd
                             </h3>
                             <div className="flex justify-between items-center mb-4">
                                 <p className="font-semibold text-gray-200">Graduate Software Developer Intern</p>
-                                <span className="text-pink-500 text-sm">Dec 2025 –</span>
+                                <span className="text-pink-500 text-sm">Dec 2025 – Jun 2026</span>
                             </div>
                             <ul className="list-disc list-inside text-gray-400 space-y-2 text-sm leading-relaxed">
                                 <li>
@@ -86,7 +130,7 @@ export default function Resume() {
                                 <li>
                                     Documented system workflows, technical specifications, and user guides to support project continuity.
                                 </li>
-                            </ul>
+                                </ul>
                         </div>
 
                         {/* Refactory Apprenticeship */}
